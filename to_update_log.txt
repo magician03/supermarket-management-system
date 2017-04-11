@@ -1,0 +1,5 @@
+logo update
+edit/del prod,customer,supplier,employee
+selling stats
+employee stats(times)
+transaction validate
