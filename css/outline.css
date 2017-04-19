@@ -7,7 +7,7 @@ table th 006b68
 body{
 	margin-left:auto;
 	margin-right:auto;
-	background-color: #7f9b4e;
+	background-color: whitesmoke;
     background-repeat: repeat, no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -21,7 +21,7 @@ body{
 }
 .container{
 	position:relative;
-	background: #7f9b4e;
+	background: whitesmoke;
 }
 a{
 	color: #0f9;/*#fff */

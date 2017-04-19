@@ -21,42 +21,7 @@ input{
 	width:190px;
 	border-radius: 5px;
 }
-input:hover {
-	color: #000;
-	-moz-box-shadow:    1px 1px 1px 1px #336600;
-    -webkit-box-shadow: 1px 1px 1px 1px #336600;
-    box-shadow:         1px 1px 1px 1px #336600;
-}
-input[type=submit],[type=button] {
-    /* Size and position */
-    width: 100%;
-    padding: 8px 5px;
-    
-    /* Styles */
-    background: #634056;
-    background: -moz-linear-gradient(rgba(99,64,86,0.5), rgba(76,49,65,0.7));
-    background: -ms-linear-gradient(rgba(99,64,86,0.5), rgba(76,49,65,0.7));
-    background: -o-linear-gradient(rgba(99,64,86,0.5), rgba(76,49,65,0.7));
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(99,64,86,0.5)), to(rgba(76,49,65,0.7)));
-    background: -webkit-linear-gradient(rgba(99,64,86,0.5), rgba(76,49,65,0.7));
-    background: linear-gradient(rgba(99,64,86,0.5), rgba(76,49,65,0.7));    
-    border-radius: 5px;
-    border: 1px solid #4e3043;
-    box-shadow: inset 0 1px rgba(255,255,255,0.4), 0 2px 1px rgba(0,0,0,0.1);
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
 
-    /* Font styles */
-    color: white;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Raleway', 'Lato', Arial, sans-serif;
-}
 address,caption,cite,code,dfn,th,var {
 	font-style:normal;
 	font-weight:normal;
@@ -82,67 +47,8 @@ h1 {
     padding-bottom: 20px;
 }
 
-input[type=text],input[type=password],input[list],input[type=date],select {
-    /* Size and position */
-    width: 100%;
-    padding: 8px 4px 8px 10px;
-    margin-bottom: 15px;
-
-    /* Styles */
-    border: 1px solid #4e3043; /* Fallback */
-    border: 1px solid rgba(78,48,67, 0.8);
-    background: rgba(0,0,0,0.15);
-    border-radius: 2px;
-    box-shadow: 
-        0 1px 0 rgba(255,255,255,0.2), 
-        inset 0 1px 1px rgba(0,0,0,0.1);
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-
-    /* Font styles */
-    font-family: 'Raleway', 'Lato', Arial, sans-serif;
-    color: #fff;
-    font-size: 13px;
-}
-
 /* Placeholder style (from http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css) */
 
-input::-webkit-input-placeholder {
-    color: rgba(37,21,26,0.5);
-    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
-}
 
-input:-moz-placeholder {
-    color: rgba(37,21,26,0.5);
-    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
-}
-
-input:-ms-input-placeholder {
-    color: rgba(37,21,26,0.5);
-    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
-}
-
-input[type=text]:hover,
-input[type=password]:hover {
-    border-color: #333;
-}
-
-input[type=text]:focus,
-input[type=password]:focus,
-input[type=submit]:focus,
-input[type=button]:focus {
-    box-shadow: 
-        0 1px 0 rgba(255,255,255,0.2), 
-        inset 0 1px 1px rgba(0,0,0,0.1),
-        0 0 0 3px rgba(255,255,255,0.15);
-    outline: none;
-}
 
 /* Fallback */
-.no-boxshadow  input[type=text]:focus,
-.no-boxshadow input[type=password]:focus {
-    outline: 1px solid white;
-}

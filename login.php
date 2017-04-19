@@ -26,7 +26,7 @@ session_start();
 ?>
 <html>
     <head>
-        <title>Supermarket Backend</title>        
+        <title>Supermarket Management System</title>        
         <link rel="stylesheet" type="text/css" href="css/outline.css" />
         <link rel="stylesheet" type="text/css" href="css/menu.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -55,9 +55,9 @@ session_start();
 			  				 else{
 								 if(isset($temp)) echo"Incorrect Username or Password";
 								echo"<form method='post' action='login.php'><table>
-					  				 <tr><td style='padding:5px' >Username:</td><td style='padding:5px' ><input type='text' name='username' placeholder='Username' /></td></tr>
-					  				 <tr><td style='padding:5px' >Password:</td><td style='padding:5px' ><input type='password' name='password' placeholder='password' /></td></tr>
-					   				 <tr><td colspan='2' style='padding:5px;' ><input type='submit' value='submit' /></td></tr></table>
+					  				 <tr><td class='input-field col s6' >Username:</td><td style='padding:5px' ><input type='text' name='username' placeholder='Username' /></td></tr>
+					  				 <tr><td class='input-field col s6' >Password:</td><td style='padding:5px' ><input type='password' name='password' placeholder='password' /></td></tr>
+					   				 <tr><td class='btn waves-effect waves-light' colspan='2' style='padding:5px;' ><input type='submit' value='submit' /></td></tr></table>
 									 </form>";
 			  					 }
 			  		   ?>

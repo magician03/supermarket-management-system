@@ -10,9 +10,11 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-        <title>Supermarket Backend</title>        
+        <title>Supermarket Management System</title>        
         <link rel="stylesheet" type="text/css" href="css/outline.css" />
-        <link rel="stylesheet" type="text/css" href="css/menu.css" />		
+        <link rel="stylesheet" type="text/css" href="css/menu.css" />	
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>	
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/design.js"></script>
@@ -20,7 +22,7 @@ session_start();
 </head>
 
 <body>
-<div class="container">
+<div>
             <div class="header">
             <a href='index.php'><img src="images/logo.png" width="120" height="80" alt='Logo' /></a>
                 <span class="right">
