@@ -28,7 +28,9 @@ session_start();
     <head>
         <title>Supermarket Backend</title>        
         <link rel="stylesheet" type="text/css" href="css/outline.css" />
-        <link rel="stylesheet" type="text/css" href="css/menu.css" />		
+        <link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/design.js"></script>
