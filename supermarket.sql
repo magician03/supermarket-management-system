@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2012 at 11:01 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Generation Time: Apr 19, 2017 at 11:59 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `supermarket`
@@ -26,15 +26,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `buy`
 --
 
-CREATE TABLE IF NOT EXISTS `buy` (
-  `purchase_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `buy` (
+  `purchase_id` int(11) NOT NULL,
   `purchase_date` date NOT NULL,
   `pids` text NOT NULL,
   `total_amount` int(11) NOT NULL,
   `profit` int(11) NOT NULL,
-  `cid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`purchase_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  `cid` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `buy`
@@ -55,18 +54,16 @@ INSERT INTO `buy` (`purchase_id`, `purchase_date`, `pids`, `total_amount`, `prof
 -- Table structure for table `customer`
 --
 
-CREATE TABLE IF NOT EXISTS `customer` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `customer` (
+  `cid` int(11) NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `cjoin_date` date NOT NULL,
   `cmoney_spent` int(11) NOT NULL,
   `caddress` varchar(50) NOT NULL,
   `cmoney_spent_reset` int(5) NOT NULL,
-  `cphone` int(12) NOT NULL,
-  PRIMARY KEY (`cid`),
-  UNIQUE KEY `cphone` (`cphone`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `cphone` int(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -74,13 +71,12 @@ CREATE TABLE IF NOT EXISTS `customer` (
 -- Table structure for table `department`
 --
 
-CREATE TABLE IF NOT EXISTS `department` (
+CREATE TABLE `department` (
   `manager_id` int(11) NOT NULL,
-  `dept_id` int(5) NOT NULL AUTO_INCREMENT,
+  `dept_id` int(5) NOT NULL,
   `dept_name` varchar(40) NOT NULL,
-  `manager_start_date` date NOT NULL,
-  PRIMARY KEY (`dept_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `manager_start_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `department`
@@ -91,7 +87,8 @@ INSERT INTO `department` (`manager_id`, `dept_id`, `dept_name`, `manager_start_d
 (3, 2, 'Electronics', '2012-10-31'),
 (4, 3, 'Clothes', '2012-10-31'),
 (5, 4, 'Household', '2012-10-31'),
-(0, 5, 'Furniture', '2012-10-31');
+(0, 5, 'Furniture', '2012-10-31'),
+(4, 6, 'groceries', '2017-04-11');
 
 -- --------------------------------------------------------
 
@@ -99,10 +96,10 @@ INSERT INTO `department` (`manager_id`, `dept_id`, `dept_name`, `manager_start_d
 -- Table structure for table `employee`
 --
 
-CREATE TABLE IF NOT EXISTS `employee` (
+CREATE TABLE `employee` (
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `dept_id` int(11) NOT NULL,
   `salary` int(8) NOT NULL,
   `phone_number` int(12) NOT NULL,
@@ -112,10 +109,8 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `dob` date NOT NULL,
   `end_date` date NOT NULL DEFAULT '0000-00-00',
   `perks` int(11) NOT NULL DEFAULT '0',
-  `admin` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uid` (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `admin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
@@ -135,21 +130,20 @@ INSERT INTO `employee` (`first_name`, `last_name`, `id`, `dept_id`, `salary`, `p
 -- Table structure for table `login`
 --
 
-CREATE TABLE IF NOT EXISTS `login` (
+CREATE TABLE `login` (
   `username` varchar(40) NOT NULL,
   `password` varchar(40) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `admin` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `id` int(11) NOT NULL,
+  `admin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`username`, `password`, `id`, `admin`) VALUES
-('owner', '72122ce96bfec66e2396d2e25225d70a', 1, 2),
-('pramodh', '1dc6b3b18fbd66eefaa9c3a788fd20ab', 2, 1);
+('owner', 'password', 1, 2),
+('pramodh', 'password', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -157,14 +151,13 @@ INSERT INTO `login` (`username`, `password`, `id`, `admin`) VALUES
 -- Table structure for table `orders_from`
 --
 
-CREATE TABLE IF NOT EXISTS `orders_from` (
+CREATE TABLE `orders_from` (
   `status` tinyint(2) NOT NULL,
-  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
   `department_id` int(5) NOT NULL,
   `pid` int(11) NOT NULL,
-  `sid` int(5) NOT NULL,
-  PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `sid` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -172,16 +165,15 @@ CREATE TABLE IF NOT EXISTS `orders_from` (
 -- Table structure for table `product`
 --
 
-CREATE TABLE IF NOT EXISTS `product` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `product` (
+  `product_id` int(11) NOT NULL,
   `cost_price` int(7) NOT NULL,
   `supplier_id` int(6) NOT NULL,
   `product_name` varchar(20) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT '0',
   `product_type` int(11) NOT NULL,
-  `market_price` int(7) NOT NULL,
-  PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+  `market_price` int(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
@@ -207,13 +199,12 @@ INSERT INTO `product` (`product_id`, `cost_price`, `supplier_id`, `product_name`
 -- Table structure for table `promotion`
 --
 
-CREATE TABLE IF NOT EXISTS `promotion` (
+CREATE TABLE `promotion` (
   `discount` int(3) NOT NULL,
   `valid_upto` date NOT NULL,
-  `promo_code` int(11) NOT NULL AUTO_INCREMENT,
-  `count` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`promo_code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `promo_code` int(11) NOT NULL,
+  `count` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `promotion`
@@ -229,16 +220,14 @@ INSERT INTO `promotion` (`discount`, `valid_upto`, `promo_code`, `count`) VALUES
 -- Table structure for table `supplier`
 --
 
-CREATE TABLE IF NOT EXISTS `supplier` (
+CREATE TABLE `supplier` (
   `sdealer` varchar(20) NOT NULL,
   `semail` varchar(40) NOT NULL,
-  `sid` int(11) NOT NULL AUTO_INCREMENT,
+  `sid` int(11) NOT NULL,
   `saddress` varchar(50) NOT NULL,
   `sname` varchar(20) NOT NULL,
-  `sphone` int(12) NOT NULL,
-  PRIMARY KEY (`sid`),
-  UNIQUE KEY `sphone` (`sphone`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `sphone` int(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `supplier`
@@ -256,15 +245,142 @@ INSERT INTO `supplier` (`sdealer`, `semail`, `sid`, `saddress`, `sname`, `sphone
 -- Table structure for table `transaction`
 --
 
-CREATE TABLE IF NOT EXISTS `transaction` (
+CREATE TABLE `transaction` (
   `p_name` varchar(40) NOT NULL,
   `pid` int(11) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT '1',
   `price` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`p_name`, `pid`, `quantity`, `price`, `id`) VALUES
+('colgate', 1, 2, 24, 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `buy`
+--
+ALTER TABLE `buy`
+  ADD PRIMARY KEY (`purchase_id`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`cid`),
+  ADD UNIQUE KEY `cphone` (`cphone`);
+
+--
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`dept_id`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uid` (`uid`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders_from`
+--
+ALTER TABLE `orders_from`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `promotion`
+--
+ALTER TABLE `promotion`
+  ADD PRIMARY KEY (`promo_code`);
+
+--
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`sid`),
+  ADD UNIQUE KEY `sphone` (`sphone`);
+
+--
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `buy`
+--
+ALTER TABLE `buy`
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `department`
+--
+ALTER TABLE `department`
+  MODIFY `dept_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `orders_from`
+--
+ALTER TABLE `orders_from`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `promotion`
+--
+ALTER TABLE `promotion`
+  MODIFY `promo_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `supplier`
+--
+ALTER TABLE `supplier`
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

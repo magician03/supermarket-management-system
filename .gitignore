@@ -21,12 +21,16 @@ $RECYCLE.BIN/
 # OSX
 # =========================
 
+#WorkSpace Settings for VSCode
+~/
+
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
