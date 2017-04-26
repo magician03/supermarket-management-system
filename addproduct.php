@@ -18,7 +18,7 @@
 					  <table>
 					    <tr><td style='padding:5px'>Product Name: </td><td><input name='product_name' type='text' /></td></tr>
 						<tr><td style='padding:5px'>Product type: </td>
-						<td><select name='product_type'>";
+						<td class='input-field col s12' ><select name='product_type'>";
 						
 						$dept_set = mysql_query("select dept_id, dept_name from department");
 				while($row = mysql_fetch_array($dept_set))

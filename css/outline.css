@@ -170,3 +170,7 @@ h1 span{
 	color:#fff;
 }
 
+
+select {
+	display: block !important;
+}
