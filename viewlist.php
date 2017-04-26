@@ -8,7 +8,7 @@
 		//product
 		if(!strcmp(strtolower($_GET['list']),"product")){
 			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
-			echo"<div id='contentbox'><div id='data'>
+			echo"<div ><div id='data'>
 				 <table id='itemList' ><tr><th>ID</th><th>Product name</th><th>Supplier name</th><th>Market Price</th><th>Cost Price</th><th>Options</th></tr>";
 			$plist = mysql_query("select product_id, product_name, supplier_id, market_price, cost_price from product");
 			while($row = mysql_fetch_array($plist)){
@@ -27,7 +27,7 @@
 		//supplier
 	elseif(!strcmp(strtolower($_GET['list']),"supplier")){
 			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
-			echo"<div id='contentbox'><div id='data'><table id='itemList' ><tr><th>ID</th><th>Supplier name</th><th>Dealer name</th><th>Email</th><th>Phone</th><th>Options</th></tr>";
+			echo"<div ><div id='data'><table id='itemList' ><tr><th>ID</th><th>Supplier name</th><th>Dealer name</th><th>Email</th><th>Phone</th><th>Options</th></tr>";
 			$slist = mysql_query("select sid, sname, sdealer, semail, sphone from supplier");
 			while($row = mysql_fetch_array($slist)){
 				echo"<tr><td>{$row['sid']}</td>
@@ -43,7 +43,7 @@
 		//customer
 	elseif(!strcmp(strtolower($_GET['list']),"customer")){
 			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
-			echo"<div id='contentbox'><div id='data'><table id='itemList' ><tr><th>ID</th><th>Name</th><th>Join Date</th><th>Money Spent</th><th>Address</th><th>Spent Reset</th><th>Phone</th><th>Options</th></tr>";
+			echo"<div ><div id='data'><table id='itemList' ><tr><th>ID</th><th>Name</th><th>Join Date</th><th>Money Spent</th><th>Address</th><th>Spent Reset</th><th>Phone</th><th>Options</th></tr>";
 			$slist = mysql_query("select cid, first_name,last_name, cjoin_date, cmoney_spent, caddress,cmoney_spent_reset,cphone from customer");
 			while($row = mysql_fetch_array($slist)){
 				echo"<tr><td>{$row['cid']}</td>
@@ -60,7 +60,7 @@
 		//employee
 	elseif(!strcmp(strtolower($_GET['list']),"employee")){
 			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
-			echo"<div id='contentbox'><div id='data'><table id='itemList' ><tr><th>ID</th><th>Name</th><th>Salary</th><th>Admin</th><th>DOB</th><th>Phone</th><th>Address</th><th>UID</th><th>Join Date</th><th>End Date</th><th>Options</th></tr>";
+			echo"<div ><div id='data'><table id='itemList' ><tr><th>ID</th><th>Name</th><th>Salary</th><th>Admin</th><th>DOB</th><th>Phone</th><th>Address</th><th>UID</th><th>Join Date</th><th>End Date</th><th>Options</th></tr>";
 			$slist = mysql_query("select id, first_name, last_name, salary, admin, dob, phone_number, address, uid, join_date, end_date from employee");
 			while($row = mysql_fetch_array($slist)){
 				echo"<tr><td>{$row['id']}</td>
@@ -80,7 +80,7 @@
 	//promo
 	elseif(!strcmp(strtolower($_GET['list']),"promo")){
 			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
-			echo"<div id='contentbo'><div id='data'><table id='itemList' ><tr><th>ID</th><th>Discount</th><th>Valid upto</th><th>count</th><th>Options</th></tr>";
+			echo"<div ><div id='data'><table id='itemList' ><tr><th>ID</th><th>Discount</th><th>Valid upto</th><th>count</th><th>Options</th></tr>";
 			$slist = mysql_query("select promo_code, discount, valid_upto, count from promotion");
 			while($row = mysql_fetch_array($slist)){
 				echo"<tr><td>{$row['promo_code']}</td>
@@ -93,7 +93,7 @@
 		//dept
 		elseif(!strcmp(strtolower($_GET['list']),"dept")){
 			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
-			echo"<div id='contentbo'><div id='data'><table id='itemList' ><tr><th>ID</th><th>Name</th><th>Manager</th><th>Options</th></tr>";
+			echo"<div ><div id='data'><table id='itemList' ><tr><th>ID</th><th>Name</th><th>Manager</th><th>Options</th></tr>";
 			$dlist = mysql_query("select dept_id, dept_name, manager_id from department");
 			while($row = mysql_fetch_array($dlist)){
 				echo"<tr><td>{$row['dept_id']}</td>
