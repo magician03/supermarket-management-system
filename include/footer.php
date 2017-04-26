@@ -1,6 +1,6 @@
 
 <div class="footer">
-	Site by<br> Satya Pramodh, Ravi Rohith, Manal Gandhi, Shravya Rao<br />
+	Developed by<br> Diwakar Moturu, Dinesh Pentakota, Ch Krishna Vamshi, Srikar KVS, Ammula Sudhakar<br />
 </div>
 <?php
 //close connection

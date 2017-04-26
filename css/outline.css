@@ -53,14 +53,14 @@ h1 span{
 	font-family:'Arial Narrow', Arial, sans-serif;
 	line-height: 50px;
 	font-size: 15px;
-	background: #000;
+	background: #622326;
 	opacity: 0.9;
 	text-transform: uppercase;
 	z-index: 9999;
 	position: relative;
-	-moz-box-shadow: 1px 0px 2px #000;
-	-webkit-box-shadow: 1px 0px 2px #000;
-	box-shadow: 1px 0px 2px #000;
+	-moz-box-shadow: 1px 0px 2px #622326;
+	-webkit-box-shadow: 1px 0px 2px #622326;
+	box-shadow: 1px 0px 2px #622326;
 }
 .header a{
 	padding: 0px 10px;
@@ -96,28 +96,13 @@ h1 span{
 	padding-bottom:100px;
 }
 .rcontent{
+	padding-top: 40px;
 	position:relative;
 	width:84%;
 	margin:0px 5px;
 	float:left;
 	overflow:auto;
 	padding-bottom:100px;
-}
-#contentbox{
-	width:90%;
-	height: 400px;
-	margin: 20px;
-	background-color:#FFFFFF;
-	border-radius:10px;
-	-moz-border-radius: 15px;
-	-moz-box-shadow:    1px 2px 5px 1px #000;
-    -webkit-box-shadow: 1px 2px 5px 1px #000;
-    box-shadow:         1px 2px 5px 1px #000;
-	opacity: 0.9;
-	overflow: auto;
-}
-#contentbox a{
-	color:#006b68;
 }
 .mcontent{
 	width:100%;
@@ -138,10 +123,10 @@ h1 span{
 	opacity: 0.9;
 	z-index: 9999;
 	bottom:0;
-	background: #000;
-	-moz-box-shadow: 1px 0px 2px #000;
-	-webkit-box-shadow: 1px 0px 2px #000;
-	box-shadow: 1px 0px 2px #000;
+	background: #622326;
+	-moz-box-shadow: 1px 0px 2px #622326;
+	-webkit-box-shadow: 1px 0px 2px #622326;
+	box-shadow: 1px 0px 2px #622326;
 	clear:both;
 }
 #itemList{

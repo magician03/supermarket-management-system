@@ -59,7 +59,7 @@
 				$result = mysql_query("insert into buy values(NULL,'{$time}','{$pids}',$totamo,$profit,$cid)");
 				if(!$result) echo "Error in transaction. Please <a href='transaction.php'>retry</a>";
 				else {
-					echo"<div id='data'><br />Items Sold!!<br />Total Cost:{$totamo}";
+					echo"<div id='data'><br />Transaction Succesfull!!<br />Total Cost:{$totamo}";
 					//lessen the quantity
 					$data = mysql_query("select pid,quantity from transaction");
 				while($row=mysql_fetch_array($data)){

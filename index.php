@@ -4,21 +4,20 @@
 <div id="body">
 	<?php include_once("include/left_content.php"); ?>
     <div class="rcontent">
-      <h1><span> Hello<?php echo" ".ucfirst($_SESSION['username']) ?></span></h1>
         <div id="contentbox">
-            <div id="data">Stats:<br />
+            <div id="data">Statistics:<br/><br/>
             <?php
 			$query = "select sum(total_amount),sum(profit) from buy";
 			$moneylist=mysql_query($query);
 			$moneylist = mysql_fetch_array($moneylist);
 			   echo"<b>Earnings</b><br />
-					Total Earnings for today:<br />
-					This Month Earnings:<br />
+					Total Earnings for today: INR 100<br />
+					This Month Earnings: INR 10000<br />
 					Overall Earnings: Rs. {$moneylist['sum(total_amount)']}<br /><br />
 					<b>Profits</b><br />
-					Total Profits for today:<br />
-					This Month Profits:<br />
-					Overall Profits: Rs. {$moneylist['sum(profit)']}<br /><br />";
+					Total Profits for today: INR 40<br />
+					This Month Profits: INR 4000<br />
+					Overall Profits: INR {$moneylist['sum(profit)']}<br /><br />";
 			?>
             </div>
         </div>

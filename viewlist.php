@@ -7,7 +7,7 @@
     <?php if(isset($_GET['list'])){
 		//product
 		if(!strcmp(strtolower($_GET['list']),"product")){
-			echo"<h1><span>List of ".ucfirst($_GET['list'])."</span></h1>";
+			echo"<h2><span>List of ".ucfirst($_GET['list'])."</span></h2>";
 			echo"<div ><div id='data'>
 				 <table id='itemList' ><tr><th>ID</th><th>Product name</th><th>Supplier name</th><th>Market Price</th><th>Cost Price</th><th>Options</th></tr>";
 			$plist = mysql_query("select product_id, product_name, supplier_id, market_price, cost_price from product");

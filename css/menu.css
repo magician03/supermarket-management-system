@@ -18,7 +18,7 @@ replace with 0f9
 	color: #0f9;
 	padding: 5px 20px;
 	margin: 2px;
-	background-color:#000;
+	background-color:#622326;
 	letter-spacing: 1px;
 	border-radius:4px;
 	-moz-border-radius:4px;
@@ -31,12 +31,12 @@ replace with 0f9
 .bmenu:hover li a{
 	text-shadow: 0px 0px 10px #0F9;
 	color: ;
-	background: rgba(0,0,0,0.9);
+	background: rgba(98,35,38,0.9);
 }
 .bmenu li a:hover{
 	margin-left:10px;
 	-moz-border-radius:0px;
 	border-radius:0px;
-	background: rgba(0,0,0,1.0);
+	background: rgba(98,35,38,0.9);
 	text-shadow: 0px 0px 1px #0F9;
 }
