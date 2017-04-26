@@ -5,7 +5,6 @@
 <div id="body">
 	<?php include_once("include/left_content.php") ?>
     <div class="rcontent">
-    	<h1><span>Settings:</span></h1>
         <div id='contentbox'><div id="data">
         <?php
 			//perform query
@@ -25,13 +24,12 @@
 						else echo "Password changing failed. Please <a href='settings.php?change_pass=1'>retry</a>";
 				}
 				else{	
-				echo "Change your password.";
 				echo "<form method='post' action='settings.php?change_pass=1&up_pass=1'>
 					  <table>
 					  <tr><td>Old Password:</td><td><input type='password' name='old_pass' /></td></tr>
 					  <tr><td>New password:</td><td><input type='password' name='new_pass' /></td></tr>
 					  <tr><td>Re-type password:</td><td><input type='password' name='new_pass_confirm' /></td></tr>
-					  <tr><td colspan='2'><input type='submit' value='update' /></td></tr></table></form>";
+					  <tr><td colspan='2'><button class='waves-effect waves-light btn' type='submit' value='update' />Update</button></td></tr></table></form>";
 				}
 			}
 			elseif(isset($_GET['del_acc'])==1){
@@ -48,8 +46,8 @@
 				}
 				else{
 				echo "Are you sure you want to delete your account?
-					  <a href='settings.php?del_acc=1&del_confirm=1'><button>Yes</button></a>&nbsp;
-					  <a href='settings.php'><button>No</button></a>";
+					  <a href='settings.php?del_acc=1&del_confirm=1'><button class='waves-effect waves-light btn'>Yes</button></a>&nbsp;
+					  <a href='settings.php'><button class='waves-effect waves-light btn'>No</button></a>";
 				}
 			}
 			elseif(isset($_GET['del_other_acc'])==1 && $_SESSION["admin"]==1){

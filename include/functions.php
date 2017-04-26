@@ -9,7 +9,7 @@ function Search_Table_For_Element($element,$sqltable,$column_id){
 		$result = strlen((string)$table_check_set);
 		return $result;
 }
-function article_write($fname,$_POST){
+function article_write($fname){
 			$_POST['content'] = htmlspecialchars($_POST['content']);
 			$_POST['content'] = addslashes($_POST['content']);
 			if(strlen($_POST['content'])){
