@@ -46,13 +46,13 @@
                 <tr><td style='padding:5px'>Last Name:</td>
                     <td><input type='text' name='lname' /></td></tr>
 					<tr><td style='padding:5px'>Dept: </td>
-						<td><input list='depts' name='dept_id' placeholder='0' value='NULL'><datalist id='depts'>";
+						<td><select list='depts' name='dept_id' placeholder='0' value='NULL' /><datalist id='depts'>";
 						
-						$dept_set = mysql_query("select dept_id, dept_name from department where manager_id='0'");
+						$dept_set = mysql_query("select distinct dept_name, dept_id from department");
 				while($row = mysql_fetch_array($dept_set))
 					echo "<option value='{$row['dept_id']}'>{$row['dept_name']}</option>";
 																	
-					echo"</datalist>
+					echo"</select></datalist>
 						</td></tr> 
                  <tr><td style='padding:5px'>Salary</td>
                  <td><input type='text' name='salary' /></td></tr>
