@@ -16,7 +16,7 @@
 				echo "<form method='post' action='addpromo.php?success=1'><table>
 					  <tr><td style='padding:5px'>Discount:</td><td><input type='text' placeholder='%' name='discount' /></td></tr>
 					  <tr><td style='padding:5px'>Valid Upto:</td><td><input type='text' name='valid' /></td></tr>
-					  <tr><td style='padding:5px' colspan='2'><input type='submit' value='submit' /></td></tr>
+					  <tr><td style='padding:5px' colspan='2'><button class='waves-effect waves-light btn' type='submit' value='submit' />Submit</button></td></tr>
 					  </table></form>";	
 			}
 		?>

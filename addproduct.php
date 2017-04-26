@@ -6,12 +6,11 @@
     <div class="rcontent">
     	<h1><span>Add Product</span></h1>
         <div id="data">To view list of products <a style="text-decoration:underline" href="viewlist.php?list=product">click here</a><br /><br />
-        Use Ajax to input supplier name and change it to supplier id<br />
         <?php 
 			if(isset($_GET['success'])){
 				$result=mysql_query("INSERT INTO product VALUES(NULL,{$_POST['cprice']},{$_POST['supplier']},'{$_POST['product_name']}',{$_POST['quantity']},'{$_POST['product_type']}',{$_POST['mprice']})");
 				if(!$result)echo "Addition not successful ".mysql_error();
-	   			else echo"Addition of product data successful";
+	   			else echo"Product added successfully";
 			}
 			else{
 				echo "<form method='post' action='addproduct.php?success=1'>
@@ -37,7 +36,7 @@
 						<tr><td style='padding:5px'>Quantity: </td><td><input name='quantity' type='text' /></td></tr>
 						<tr><td style='padding:5px'>Market Price: </td><td><input name='mprice' type='text' /></td></tr>
 						<tr><td style='padding:5px'>Cost Price: </td><td><input name='cprice' type='text' /></td></tr>
-						<tr><td style='padding:5px' colspan='2'><input type='submit' value='submit' /></td></tr>
+						<tr><td style='padding:5px' colspan='2'><button class='waves-effect waves-light btn' type='submit' value='submit' />Submit</button></td></tr>
 					  </table></form>";
 			} 
         ?>

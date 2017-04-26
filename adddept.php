@@ -25,7 +25,7 @@
 				echo"</select></td>
 						</tr>						
 						<tr><td style='padding:5px' colspan='2'><input type='hidden' name='doj' value='{$time}' />
-							<input type='submit' value='submit' /></td></tr>
+							<button class='waves-effect waves-light btn' type='submit' value='submit' />Submit</button></td></tr>
 					  </table></form>";
 			} 
 			?>

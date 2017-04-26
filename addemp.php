@@ -30,7 +30,7 @@
 			<td><input type='password' name='password' /></td></tr>
 			<input type='hidden' name='admin' value='{$_POST['admin']}' />
 			<input type='hidden' name='id' value='{$empid[0]}' />
-			<tr><td colspan='2' style='padding:5px'><input type='submit' value='submit' /></td></tr>
+			<tr><td colspan='2' style='padding:5px'><button class='waves-effect waves-light btn' type='submit' value='submit' />Submit</button></td></tr>
 			</table>
 			</form>";
 	   if(!$result)echo "Addition not successful";
@@ -74,7 +74,7 @@
 				 	<option value='1'>Admin</option>
 					<option value='0'>Not Admin</option>
 					</select></td></tr>
-                 <tr><td colspan='2'><input type='submit' name='submit' value='Submit' /></td></tr>
+                 <tr><td colspan='2'><button class='waves-effect waves-light btn' type='submit' name='submit' value='Submit' />Submit</button></td></tr>
         </table></form>";
 	   }
 		?>

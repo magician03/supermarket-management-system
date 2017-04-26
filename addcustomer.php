@@ -24,7 +24,7 @@
 						<input name='cmoneyspent' type='hidden' value='0'/>
 						<input type='hidden' name='cmoney_spent_reset' value='0' />	
 						<tr><td style='padding:5px'>Phone no.</td><td><input type='text' placeholder='+91..' name='cphone' /></td></tr>
-						<tr><td colspan='2'><input type='submit' value='submit' /></td></tr>
+						<tr><td colspan='2'><button class='waves-effect waves-light btn' type='submit' value='submit' />Submit</button></td></tr>
 					</table></form>";
 			}
         ?>

@@ -20,7 +20,7 @@
 						<tr><td style='padding:5px'>Dealer: </td><td><input name='dealer' type='text' /></td></tr>
 						<tr><td style='padding:5px'>Phone: </td><td><input name='phone' placeholder='+91..' type='text' /></td></tr>
 						<tr><td style='padding:5px'>Email: </td><td><input name='email' placeholder='name@email.com' type='text' /></td></tr>
-						<tr><td style='padding:5px' colspan='2'><input type='submit' value='submit' /></td></tr>
+						<tr><td style='padding:5px' colspan='2'><button class='waves-effect waves-light btn' type='submit' value='submit' />Submit</button></td></tr>
 					  </table></form>";
 			} 
 			?>
