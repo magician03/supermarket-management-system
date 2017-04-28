@@ -55,7 +55,7 @@ session_start();
                         <tr><td>Product ID:</td><td><input type="text" id='prodid' name="prodid" onChange="pidChange(id,this.value)"/></td></tr>
                         <tr><td>Product Name:</td><td><input type="text" id='prodname' onchange='pnameChange(name,this.value)' name="prodname"/></td></tr>                          <tr><td>Quantity:</td><td><input type="text" id='quantity' name="quantity" size="6"/><span id='quantityDisp'></span></td></tr>
                         <tr><td>Price:</td><td>Rs.&nbsp;<span id="itemPrice">0</span></td></tr>            
-                        <tr><td colspan="2" style="float:right"><button class="waves-effect waves-light btn" value="add" onClick="transadd()" />Add</button></td></tr>
+                        <tr><td colspan="2" style="float:right"><input class="waves-effect waves-light btn" type="button" value="add" onClick="transadd()" /></td></tr>
                         <tr><td>PromoCode:</td><td><input type="text" id='discount' name="discount" size="6"/></td></tr>
                         <tr><td>Customer Id:</td><td><input type="text" id='cid' name="cid" size="6" placeholder="0 for Guest"/></td></tr>
                     </table>
