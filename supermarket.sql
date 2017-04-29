@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2017 at 11:59 AM
+-- Generation Time: Apr 29, 2017 at 05:29 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -46,7 +46,12 @@ INSERT INTO `buy` (`purchase_id`, `purchase_date`, `pids`, `total_amount`, `prof
 (4, '2012-11-02', '8,1', 2200, 300, 0),
 (5, '2012-11-02', '1', 1200, 200, 0),
 (6, '2012-11-02', '1,10,5', 123700, 12700, 0),
-(7, '2012-11-02', '1,1', 12000, 2000, 0);
+(7, '2012-11-02', '1,1', 12000, 2000, 0),
+(8, '2017-04-26', '1', 24, 4, 0),
+(9, '2017-04-26', '1', 24, 4, 0),
+(10, '2017-04-26', '1,1', 84, 14, 0),
+(11, '2017-04-26', '2', 100, 20, 0),
+(12, '2017-04-26', '2', 125, 25, 0);
 
 -- --------------------------------------------------------
 
@@ -118,11 +123,11 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`first_name`, `last_name`, `id`, `dept_id`, `salary`, `phone_number`, `address`, `uid`, `join_date`, `dob`, `end_date`, `perks`, `admin`) VALUES
 ('Boss', 'owner', 1, 0, 50000, 99999999, 'H.no12, Example Nagar', 78945, '2012-10-31', '1992-10-01', '0000-00-00', 0, 2),
-('Pramodh', 'Mazumdar', 2, 2, 50000, 99994444, 'l-502', 11, '2012-10-31', '1992-12-11', '0000-00-00', 0, 1),
-('Manal', 'Gandhi', 3, 3, 50000, 88888333, 'l-502', 47, '2012-10-31', '1992-02-08', '0000-00-00', 0, 1),
-('Ravi', 'Rohith', 4, 0, 50000, 77776666, 'e-146', 17, '2012-10-31', '1992-12-17', '0000-00-00', 0, 1),
-('Shravya', 'Rao', 5, 4, 50000, 6666677, 'l-234', 12, '2012-10-31', '1992-05-09', '0000-00-00', 0, 1),
-('Avinash', 'Reddy', 6, 0, 40000, 87989456, 'l-328', 87, '2012-10-31', '1992-07-09', '0000-00-00', 0, 0);
+('user', 'one', 2, 2, 50000, 99994444, 'l-502', 11, '2012-10-31', '1992-12-11', '0000-00-00', 0, 1),
+('user', 'two', 3, 3, 50000, 88888333, 'l-502', 47, '2012-10-31', '1992-02-08', '0000-00-00', 0, 1),
+('user', 'three', 4, 0, 50000, 77776666, 'e-146', 17, '2012-10-31', '1992-12-17', '0000-00-00', 0, 1),
+('user', 'four', 5, 4, 50000, 6666677, 'l-234', 12, '2012-10-31', '1992-05-09', '0000-00-00', 0, 1),
+('user', 'five', 6, 0, 40000, 87989456, 'l-328', 87, '2012-10-31', '1992-07-09', '0000-00-00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -180,8 +185,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `cost_price`, `supplier_id`, `product_name`, `quantity`, `product_type`, `market_price`) VALUES
-(1, 12, 1, 'colgate', 1000, 1, 10),
-(2, 25, 2, 'apple', 1000, 1, 20),
+(1, 12, 1, 'colgate', 989, 1, 10),
+(2, 25, 2, 'apple', 991, 1, 20),
 (3, 60, 3, 'lumia', 1000, 2, 40),
 (4, 70, 4, 'nexus', 1000, 2, 60),
 (5, 450, 4, 'peter eng', 950, 3, 400),
@@ -212,7 +217,8 @@ CREATE TABLE `promotion` (
 
 INSERT INTO `promotion` (`discount`, `valid_upto`, `promo_code`, `count`) VALUES
 (12, '2010-05-04', 1, 0),
-(25, '2010-05-04', 2, 0);
+(25, '2010-05-04', 2, 0),
+(20, '0000-00-00', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -234,10 +240,10 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`sdealer`, `semail`, `sid`, `saddress`, `sname`, `sphone`) VALUES
-('Mcd', 'afdasdf', 1, 'sdfsadf', 'raviq', 987975464),
-('kfc', 'hfsfgd', 2, 'sdgsdfjg', 'charan', 3455366),
-('reliance', 'sgfjsdf', 3, 'sdgsdfg', 'karan', 345345),
-('imax', 'sdgsdfgw', 4, 'iueriuw', 'harish', 87977);
+('Mcd', 'afdasdf', 1, 'sdfsadf', 'sup1', 987975464),
+('kfc', 'hfsfgd', 2, 'sdgsdfjg', 'sup2', 3455366),
+('reliance', 'sgfjsdf', 3, 'sdgsdfg', 'sup3', 345345),
+('imax', 'sdgsdfgw', 4, 'iueriuw', 'sup4', 87977);
 
 -- --------------------------------------------------------
 
@@ -258,7 +264,9 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`p_name`, `pid`, `quantity`, `price`, `id`) VALUES
-('colgate', 1, 2, 24, 1);
+('apple', 2, 5, 125, 4),
+('nexus', 4, 3, 210, 5),
+('lumia', 3, 2, 120, 6);
 
 --
 -- Indexes for dumped tables
@@ -335,7 +343,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `buy`
 --
 ALTER TABLE `buy`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `customer`
 --
@@ -370,7 +378,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `promotion`
 --
 ALTER TABLE `promotion`
-  MODIFY `promo_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `promo_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `supplier`
 --
@@ -380,7 +388,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
